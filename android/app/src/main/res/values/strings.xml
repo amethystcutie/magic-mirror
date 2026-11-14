@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Magic Mirror</string>
+    <string name="title_activity_main">Magic Mirror</string>
+    <string name="package_name">gay.amethyst.magicmirror</string>
+    <string name="custom_url_scheme">gay.amethyst.magicmirror</string>
+</resources>
