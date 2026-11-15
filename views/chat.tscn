@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://4m7m2smys3vn"]
+
+[ext_resource type="Script" uid="uid://bvu2lddfyslbv" path="res://src/chat.gd" id="1_jhs4o"]
+
+[node name="Chat" type="Control" unique_id=89807915]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jhs4o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=519576323]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=506815766]
+layout_mode = 2
+text = "CHAT"
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=113574953]
+unique_name_in_owner = true
+layout_mode = 2
+text = "BACK"

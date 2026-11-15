@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b7o8u0qdskj7q"]
+
+[ext_resource type="Theme" uid="uid://d022e6cfrdypy" path="res://default_theme.tres" id="1_147wo"]
+[ext_resource type="PackedScene" uid="uid://c2mphdfs7pemb" path="res://components/contact_listing.tscn" id="2_veu2x"]
+
+[node name="Menu" type="Control" unique_id=1362652966]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_147wo")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2073216393]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1022284229]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1597065217]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2075940938]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Magic Mirror"
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=1628981316]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+
+[node name="ContactsList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer" unique_id=1693238074]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ContactListing" parent="MarginContainer/VBoxContainer/ScrollContainer/ContactsList" unique_id=142004650 instance=ExtResource("2_veu2x")]
+layout_mode = 2

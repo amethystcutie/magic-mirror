@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://dl3vcwc3b8faa"]
+
+[ext_resource type="PackedScene" uid="uid://b7o8u0qdskj7q" path="res://views/menu.tscn" id="1_n3t7u"]
+[ext_resource type="Script" uid="uid://bqtuh4udwh62x" path="res://src/main_view.gd" id="1_nrkyd"]
+[ext_resource type="PackedScene" uid="uid://4m7m2smys3vn" path="res://views/chat.tscn" id="3_76ehx"]
+
+[sub_resource type="Gradient" id="Gradient_n3t7u"]
+offsets = PackedFloat32Array(0, 0.48626372, 0.90384614)
+colors = PackedColorArray(0.34286615, 0.3010259, 0.72371995, 1, 0.808061, 0.3464914, 0.68596476, 1, 0.84507334, 0.38283873, 0.35216543, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nrkyd"]
+gradient = SubResource("Gradient_n3t7u")
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Animation" id="Animation_n3t7u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CurrentView:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CurrentView:anchor_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NextView:anchor_left")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NextView:anchor_right")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="Animation" id="Animation_nrkyd"]
+resource_name = "slide_next"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CurrentView:anchor_left")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CurrentView:anchor_right")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NextView:anchor_left")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NextView:anchor_right")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [2.0, 2.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_76ehx"]
+_data = {
+&"RESET": SubResource("Animation_n3t7u"),
+&"slide_next": SubResource("Animation_nrkyd")
+}
+
+[node name="MainView" type="Control" unique_id=18720846 node_paths=PackedStringArray("views")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nrkyd")
+views = {
+1: NodePath("NextView/Menu"),
+2: NodePath("CurrentView/Chat")
+}
+
+[node name="Wallpaper" type="TextureRect" parent="." unique_id=279328055]
+z_index = -90
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_nrkyd")
+
+[node name="CurrentView" type="Control" parent="." unique_id=423152422]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Chat" parent="CurrentView" unique_id=89807915 instance=ExtResource("3_76ehx")]
+layout_mode = 1
+
+[node name="NextView" type="Control" parent="." unique_id=361604580]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 1.0
+anchor_right = 2.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" parent="NextView" unique_id=1136506924 instance=ExtResource("1_n3t7u")]
+layout_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=655409245]
+libraries/ = SubResource("AnimationLibrary_76ehx")
+
+[node name="Shelf" type="Control" parent="." unique_id=318659079]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0

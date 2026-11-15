@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c2mphdfs7pemb"]
+
+[ext_resource type="Texture2D" uid="uid://bwrhgxtksqixb" path="res://icon.svg" id="1_c47oa"]
+[ext_resource type="Script" uid="uid://b0b4gxku86sio" path="res://src/contact_listing.gd" id="1_wynvq"]
+
+[node name="ContactListing" type="PanelContainer" unique_id=142004650]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 76.0
+grow_horizontal = 2
+script = ExtResource("1_wynvq")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1388953190]
+layout_mode = 2
+mouse_behavior_recursive = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=895252727]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1141877143]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("1_c47oa")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1772593802]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1619058019]
+layout_mode = 2
+text = "Godette"
+
+[node name="Desc" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=861589775]
+layout_mode = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam blanditiis corporis, cumque deserunt dolorum esse incidunt inventore magni, minus, quod rerum tempore voluptatem? Architecto facere sequi sint sunt totam, vel?"
+text_overrun_behavior = 6
+
+[node name="Button" type="Button" parent="." unique_id=19497760]
+unique_name_in_owner = true
+z_index = -1
+layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=548356276]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(1, 0.84705883, 1, 1)
+theme_override_font_sizes/font_size = 31
+text = "> "
