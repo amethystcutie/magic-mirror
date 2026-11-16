@@ -1,17 +1,16 @@
 [gd_scene format=3 uid="uid://dl3vcwc3b8faa"]
 
 [ext_resource type="PackedScene" uid="uid://b7o8u0qdskj7q" path="res://views/menu.tscn" id="1_n3t7u"]
-[ext_resource type="Script" uid="uid://bqtuh4udwh62x" path="res://src/main_view.gd" id="1_nrkyd"]
+[ext_resource type="Script" uid="uid://bqtuh4udwh62x" path="res://src/views/main_view.gd" id="1_nrkyd"]
 [ext_resource type="PackedScene" uid="uid://4m7m2smys3vn" path="res://views/chat.tscn" id="3_76ehx"]
 
 [sub_resource type="Gradient" id="Gradient_n3t7u"]
-offsets = PackedFloat32Array(0, 0.48626372, 0.90384614)
-colors = PackedColorArray(0.34286615, 0.3010259, 0.72371995, 1, 0.808061, 0.3464914, 0.68596476, 1, 0.84507334, 0.38283873, 0.35216543, 1)
+offsets = PackedFloat32Array(0.0027472528, 0.0989011)
+colors = PackedColorArray(0.12532622, 0.12532622, 0.12532622, 1, 0.12532622, 0.12532622, 0.12532622, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_nrkyd"]
 gradient = SubResource("Gradient_n3t7u")
 fill_from = Vector2(1, 1)
-fill_to = Vector2(0, 0)
 
 [sub_resource type="Animation" id="Animation_n3t7u"]
 length = 0.001
@@ -123,7 +122,7 @@ _data = {
 &"slide_next": SubResource("Animation_nrkyd")
 }
 
-[node name="MainView" type="Control" unique_id=18720846 node_paths=PackedStringArray("views")]
+[node name="MainView" type="Control" unique_id=18720846]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -131,10 +130,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nrkyd")
-views = {
-1: NodePath("NextView/Menu"),
-2: NodePath("CurrentView/Chat")
-}
 
 [node name="Wallpaper" type="TextureRect" parent="." unique_id=279328055]
 z_index = -90

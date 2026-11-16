@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://c0yq8ufwmamwo"]
+
+[ext_resource type="Script" uid="uid://c2yusj7eoqtte" path="res://src/components/chat_bubble.gd" id="1_fb7t1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fb7t1"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hopl3"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.60403687, 0.16335505, 0.8368911, 0.6)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 24
+corner_detail = 5
+
+[node name="ChatBubble" type="MarginContainer" unique_id=849457976]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 12.0
+grow_horizontal = 2
+script = ExtResource("1_fb7t1")
+
+[node name="OtherBubble" type="HBoxContainer" parent="." unique_id=1611529196]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Bubble" type="PanelContainer" parent="OtherBubble" unique_id=803223140]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fb7t1")
+
+[node name="MarginContainer" type="MarginContainer" parent="OtherBubble/Bubble" unique_id=1612710827]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="OtherLabel" type="Label" parent="OtherBubble/Bubble/MarginContainer" unique_id=739080870]
+unique_name_in_owner = true
+layout_mode = 2
+text = "lorem ipsum dolor"
+
+[node name="YourBubble" type="HBoxContainer" parent="." unique_id=1495569034]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+alignment = 2
+
+[node name="Bubble" type="PanelContainer" parent="YourBubble" unique_id=1163563629]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hopl3")
+
+[node name="MarginContainer" type="MarginContainer" parent="YourBubble/Bubble" unique_id=2034890924]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="YourLabel" type="Label" parent="YourBubble/Bubble/MarginContainer" unique_id=1266411477]
+unique_name_in_owner = true
+layout_mode = 2
+text = "sit amet"

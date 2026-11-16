@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ct6i3muolt08v"]
+
+[ext_resource type="Script" uid="uid://c5lg83a2ainnd" path="res://src/global/contacts.gd" id="1_xkqwf"]
+[ext_resource type="Script" uid="uid://cg4kxdus6locf" path="res://src/types/contact.gd" id="2_hbmho"]
+[ext_resource type="Texture2D" uid="uid://b0de4qmyryp57" path="res://assets/godette.png" id="3_ryvss"]
+
+[sub_resource type="Resource" id="Resource_hbmho"]
+script = ExtResource("2_hbmho")
+name = "Godette"
+picture = ExtResource("3_ryvss")
+colour = Color(0.14711207, 0.58985174, 0.79907566, 1)
+metadata/_custom_type_script = "uid://cg4kxdus6locf"
+
+[node name="Contacts" type="Node" unique_id=633338800]
+script = ExtResource("1_xkqwf")
+contacts = Array[ExtResource("2_hbmho")]([SubResource("Resource_hbmho")])

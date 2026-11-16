@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c2mphdfs7pemb"]
 
 [ext_resource type="Texture2D" uid="uid://bwrhgxtksqixb" path="res://icon.svg" id="1_c47oa"]
-[ext_resource type="Script" uid="uid://b0b4gxku86sio" path="res://src/contact_listing.gd" id="1_wynvq"]
+[ext_resource type="Script" uid="uid://b0b4gxku86sio" path="res://src/components/contact_listing.gd" id="1_wynvq"]
 
 [node name="ContactListing" type="PanelContainer" unique_id=142004650]
 anchors_preset = 10

@@ -1,26 +1,93 @@
 [gd_scene format=3 uid="uid://4m7m2smys3vn"]
 
-[ext_resource type="Script" uid="uid://bvu2lddfyslbv" path="res://src/chat.gd" id="1_jhs4o"]
+[ext_resource type="Script" uid="uid://bvu2lddfyslbv" path="res://src/views/chat.gd" id="1_jhs4o"]
 
-[node name="Chat" type="Control" unique_id=89807915]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhs4o"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 5
+
+[node name="Chat" type="Control" unique_id=67416766]
 layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_jhs4o")
+view = 2
+metadata/_custom_type_script = "uid://blah36dbgv18f"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=519576323]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jhs4o")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=519576323]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=506815766]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=2104545899]
 layout_mode = 2
-text = "CHAT"
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhs4o")
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=113574953]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer" unique_id=1763613012]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer" unique_id=1233406575]
+layout_mode = 2
+text = "Chat with Godette"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer" unique_id=1357326902]
 unique_name_in_owner = true
 layout_mode = 2
-text = "BACK"
+size_flags_horizontal = 0
+text = "<~"
+
+[node name="ChatScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=405140227]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+scroll_hint_mode = 4
+
+[node name="ChatContents" type="VBoxContainer" parent="VBoxContainer/ChatScrollContainer" unique_id=1781321189]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InputContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1146320399]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+offset_transform_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/InputContainer" unique_id=1891767324]
+layout_mode = 2
+alignment = 2
+
+[node name="EmbedButton" type="Button" parent="VBoxContainer/InputContainer/HBoxContainer" unique_id=1319050315]
+unique_name_in_owner = true
+layout_mode = 2
+text = " + "
+
+[node name="ChatInput" type="TextEdit" parent="VBoxContainer/InputContainer/HBoxContainer" unique_id=609841479]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(-1, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Type something..."
+context_menu_enabled = false
+backspace_deletes_composite_character_enabled = true
+middle_mouse_paste_enabled = false
+scroll_fit_content_height = true
+caret_multiple = false
+
+[node name="SendButton" type="Button" parent="VBoxContainer/InputContainer/HBoxContainer" unique_id=1491634803]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Send"
