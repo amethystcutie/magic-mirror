@@ -17,7 +17,8 @@ mouse_behavior_recursive = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=895252727]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1141877143]
+[node name="ProfilePic" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1141877143]
+unique_name_in_owner = true
 custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("1_c47oa")
@@ -27,11 +28,13 @@ stretch_mode = 5
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1619058019]
+[node name="NameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1619058019]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Godette"
 
-[node name="Desc" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=861589775]
+[node name="DescLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=861589775]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam blanditiis corporis, cumque deserunt dolorum esse incidunt inventore magni, minus, quod rerum tempore voluptatem? Architecto facere sequi sint sunt totam, vel?"
 text_overrun_behavior = 6
