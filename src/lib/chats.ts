@@ -21,3 +21,6 @@ export let contacts: Contact[] = [
         colour: "#fb4941"
     },
 ]
+
+export const getById = (id: number): Contact | undefined =>
+    contacts.find(c => c.id === id)

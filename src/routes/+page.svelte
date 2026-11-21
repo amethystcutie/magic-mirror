@@ -25,3 +25,4 @@ import {contacts} from "#lib/chats.ts";
         {/each}
     </div>
 </Page>
+

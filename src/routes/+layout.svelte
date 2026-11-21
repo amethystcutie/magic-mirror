@@ -3,6 +3,8 @@
 	import favicon from '#lib/assets/favicon.svg';
 	import type { LayoutProps } from './$types';
     import {onNavigate} from "$app/navigation";
+    import {onMount} from "svelte";
+    import { App } from '@capacitor/app';
 
 	let { children }: LayoutProps = $props();
 
@@ -15,6 +17,16 @@
               await navigation.complete;
            });
         });
+    });
+
+    onMount(() => {
+        App.addListener("backButton", ({ canGoBack }) => {
+            if (canGoBack) {
+                window.history.back();
+            } else {
+                App.exitApp();
+            }
+        })
     });
 </script>
 

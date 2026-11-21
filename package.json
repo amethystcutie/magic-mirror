@@ -14,7 +14,8 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"app-dev": "bun dev & sleep 2 && chromium --app='http://localhost:5173' --window-size=416,900"
+		"dev:chrome": "bun dev & sleep 2 && chromium --app='http://localhost:5173' --window-size=416,900",
+        "dev:android": "bun x cap run android -l"
 	},
 	"devDependencies": {
 		"@capacitor/cli": "^8.6.2",
@@ -31,6 +32,7 @@
 	},
 	"dependencies": {
 		"@capacitor/android": "^8.6.2",
+		"@capacitor/app": "^8.1.2",
 		"@capacitor/core": "^8.6.2",
 		"@sveltejs/adapter-static": "^4.0.1",
 		"daisyui": "^5.8.0"
